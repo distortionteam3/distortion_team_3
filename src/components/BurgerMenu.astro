@@ -1,13 +1,7 @@
 ---
-// Dette er den logik, vi skal bruge i komponenten
-let isOpen = false;
-
-function toggleMenu() {
-  isOpen = !isOpen;
-}
 ---
 <style>
-  /* Styling til navbar og layout */
+  /* Styling af navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -23,17 +17,23 @@ function toggleMenu() {
     font-weight: bold;
   }
 
+  /* Skjul checkboxen (bruges til at styre menuen) */
+  .menu-checkbox {
+    display: none;
+  }
+
   /* Burger-ikon styling */
   .burger-icon {
     display: block;
-    cursor: pointer;
     width: 30px;
     height: 30px;
+    cursor: pointer;
     position: relative;
   }
 
   .burger-icon span {
     display: block;
+    width: 100%;
     height: 4px;
     background-color: white;
     margin: 6px 0;
@@ -44,7 +44,7 @@ function toggleMenu() {
   .menu {
     position: absolute;
     top: 60px;
-    right: 0; /* Altid til højre */
+    right: 0;
     width: 200px;
     background-color: #333;
     list-style-type: none;
@@ -64,19 +64,20 @@ function toggleMenu() {
     display: block;
   }
 
-  .menu.show {
+  /* Når checkboxen er markeret, vis menuen */
+  .menu-checkbox:checked + .burger-icon + .menu {
     display: block;
   }
 
-  /* På større skærme, lad dropdown være i højre hjørne */
+  /* Gør det responsivt, burger-ikonet forbliver */
   @media(min-width: 768px) {
     .burger-icon {
-      display: block; /* Holder burgerikonet på desktop */
+      display: block;
     }
 
     .menu {
       position: absolute;
-      right: 0; /* Altid til højre */
+      right: 0;
     }
   }
 </style>
@@ -87,15 +88,18 @@ function toggleMenu() {
     <a href="#">Mit Logo</a>
   </div>
 
-  <!-- Burger ikonet til højre -->
-  <div class="burger-icon" on:click={toggleMenu}>
+  <!-- Checkbox til toggling af menuen -->
+  <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+
+  <!-- Burger ikonet, label er bundet til checkboxen -->
+  <label class="burger-icon" for="menu-toggle">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </label>
 
   <!-- Dropdown menu -->
-  <ul class={`menu ${isOpen ? 'show' : ''}`}>
+  <ul class="menu">
     <li><a href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
