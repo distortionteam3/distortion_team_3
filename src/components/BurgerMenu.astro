@@ -6,27 +6,8 @@ function toggleMenu() {
   isOpen = !isOpen;
 }
 ---
-
-<nav class="navbar">
-  <!-- Burger ikonet til højre -->
-  <div class="burger-icon" onclick={toggleMenu}>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <!-- Menuen til venstre -->
-  <ul class={`menu ${isOpen ? 'show' : ''}`}>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-
-
 <style>
-  /* Styling til burgermenuen */
+  /* Styling til navbar og layout */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,6 +16,14 @@ function toggleMenu() {
     background-color: #333;
   }
 
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  /* Burger-ikon styling */
   .burger-icon {
     display: block;
     cursor: pointer;
@@ -51,12 +40,12 @@ function toggleMenu() {
     transition: 0.3s;
   }
 
-  /* Dropdown menu */
+  /* Dropdown menu styling */
   .menu {
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 100%;
+    right: 0; /* Altid til højre */
+    width: 200px;
     background-color: #333;
     list-style-type: none;
     padding: 0;
@@ -79,22 +68,38 @@ function toggleMenu() {
     display: block;
   }
 
-  /* Responsiv skjul af menu */
+  /* På større skærme, lad dropdown være i højre hjørne */
   @media(min-width: 768px) {
     .burger-icon {
-      display: none;
+      display: block; /* Holder burgerikonet på desktop */
     }
 
     .menu {
-      display: flex;
-      position: static;
-      flex-direction: row;
-      background: none;
-    }
-
-    .menu li {
-      border: none;
+      position: absolute;
+      right: 0; /* Altid til højre */
     }
   }
 </style>
+
+<nav class="navbar">
+  <!-- Logo til venstre -->
+  <div class="logo">
+    <a href="#">Mit Logo</a>
+  </div>
+
+  <!-- Burger ikonet til højre -->
+  <div class="burger-icon" on:click={toggleMenu}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Dropdown menu -->
+  <ul class={`menu ${isOpen ? 'show' : ''}`}>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
