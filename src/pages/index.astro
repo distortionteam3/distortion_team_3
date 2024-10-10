@@ -1,5 +1,6 @@
 ---
 import BurgerMenu from '../components/BurgerMenu.astro'; // Importér burgermenu-komponenten
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 
@@ -11,6 +12,9 @@ import BurgerMenu from '../components/BurgerMenu.astro'; // Importér burgermenu
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 		<link rel="stylesheet" href="/src/styles/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 
@@ -18,11 +22,11 @@ import BurgerMenu from '../components/BurgerMenu.astro'; // Importér burgermenu
   
   <body>
     <!-- Inkludér burgermenuen -->
-    <BurgerMenu />
+	 <BurgerMenu />
+   <MainLayout />
 
     <main>
-      <h1>Velkommen til min side!</h1>
-      <p>Dette er et eksempel på en burgermenu lavet med Astro.</p>
+     <h1>:)</h1>
     </main>
 
 	</body>
