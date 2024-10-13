@@ -37,6 +37,7 @@ h1 {
   font-style: normal;
   color: #46ec5a;
   font-size: 10rem;
+   display: inline-block;
 }
 
 h2 {
@@ -64,4 +65,13 @@ body {
   padding: 0;
   background-color: #323232;
   text-align: center;
+}
+
+.inline-image {
+  vertical-align: middle; 
+}
+
+.inline-image img {
+  width: 30px; 
+  height: auto;
 }
