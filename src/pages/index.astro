@@ -1,29 +1,27 @@
 ---
-import BurgerMenu from '../components/BurgerMenu.astro'; // Importér burgermenu-komponenten
+import BurgerMenu from '../components/BurgerMenu.astro';
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Forside</title>
 		<link rel="stylesheet" href="/src/styles/style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 	</head>
-	<body>
-
 	
-  
   <body>
-    <!-- Inkludér burgermenuen -->
+    
 	 <BurgerMenu />
 	 <MainLayout>
+
    <main>
 
     <div class="grid-container">
@@ -45,9 +43,10 @@ import MainLayout from "../layouts/MainLayout.astro";
     
 	
     <div class="box box5">
-		<h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
-		      <button class="forsideknaporange">Lineup</button>
-	</div>
+    <h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
+<button class="forsideknaporange" onclick="window.location.href='/lineup'">Lineup</button>
+
+</div>
 
     <div class="box box6 image-box"></div>
 
@@ -89,6 +88,5 @@ import MainLayout from "../layouts/MainLayout.astro";
 </MainLayout>
 
     
-
-	</body>
+</body>
 </html>
