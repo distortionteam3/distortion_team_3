@@ -1,92 +1,81 @@
 ---
-import BurgerMenu from '../components/BurgerMenu.astro';
+import BurgerMenu from "../components/BurgerMenu.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Forside</title>
-		<link rel="stylesheet" href="/src/styles/style.css">
-		<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-	</head>
-	
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Forside</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+  </head>
+
   <body>
-    
-	 <BurgerMenu />
-	 <MainLayout>
+    <BurgerMenu />
+    <MainLayout>
+      <main>
+        <div class="grid-container">
+          <div class="box box1">
+            <h2 class="grøntekst">BLIND BIRD TICKETS ON SALE NOW</h2>
+            <button class="forsideknapgrøn">Get your tickets here</button>
+          </div>
 
-   <main>
+          <div class="box box2 image-box"></div>
 
-    <div class="grid-container">
+          <div class="box box4">
+            <h2>See you next summer!</h2>
+            <img class="jester" src="/imgs/jestersort.png" alt="JESTER" />
+            <h2>4-8 June 2025</h2>
+          </div>
 
-    <div class="box box1">
-      <h2 class="grøntekst">BLIND BIRD TICKETS ON SALE NOW</h2>
-      <button class="forsideknapgrøn">Get your tickets here</button>
-    </div>
+          <div class="box box3 image-box"></div>
 
-    <div class="box box2 image-box"></div>
+          <div class="box box5">
+            <h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
+            <button class="forsideknaporange" onclick="window.location.href='/lineup'">Lineup</button>
+          </div>
 
-<div class="box box4">
-    <h2>See you next summer!</h2>
-	<img class="jester" src="/public/jestersort.png" alt="JESTER">
-    <h2>4-8 June 2025</h2>
-    </div>
-    
-	<div class="box box3 image-box"></div>
-    
-	
-    <div class="box box5">
-    <h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
-<button class="forsideknaporange" onclick="window.location.href='/lineup'">Lineup</button>
+          <div class="box box6 image-box"></div>
 
-</div>
+          <div class="box box7">
+            <h2 class="sorttekst">
+              The official <h2>festival app</h2><h2 class="sorttekst">Get set times, maps and more</h2>
+              <div>
+                <button class="gråknap"><img src="/imgs/AppSymbol.png" alt="" /></button>
+                <button class="gråknap"><img src="/imgs/Playstore.png" alt="" /></button>
+              </div>
+            </h2>
 
-    <div class="box box6 image-box"></div>
+            <div class="box box8 image-box"></div>
 
-    <div class="box box7">
-		<h2 class="sorttekst">The official <h2>festival app</h2><h2 class="sorttekst"> Get set times, maps and more</h2>
-<div>
-		<button class="gråknap"><img src="/public/AppSymbol.png" alt=""></button>
-		<button class="gråknap"><img src="/public/Playstore.png" alt=""></button>
-</div>
-	</div>
-    
-	<div class="box box8 image-box"></div>
-    
-	<div class="box box9 image-box">
-  <button class="forsideknapgrøn bottom-button">Merchandise</button>
-</div>
-    
-	<div class="box box10">
-<h2>Discover our many events all over Copenhagen</h2>
+            <div class="box box9 image-box">
+              <button class="forsideknapgrøn bottom-button">Merchandise</button>
+            </div>
 
-  <button class="forsideknapgrøn bottom-button">Events</button>
+            <div class="box box10">
+              <h2>Discover our many events all over Copenhagen</h2>
 
-	</div>
-    
-	<div class="box box11">
+              <button class="forsideknapgrøn bottom-button">Events</button>
+            </div>
 
-		<h2 class="sorttekst">Neighbour</h2>
-			<h2 class="h2regular">Are you a neighbour to Distortion? Get all the info you need here</h2>
+            <div class="box box11">
+              <h2 class="sorttekst">Neighbour</h2>
+              <h2 class="h2regular">Are you a neighbour to Distortion? Get all the info you need here</h2>
 
-			<button class="sortknap bottom-button">Neighbour</button>
-	</div>
-    
-	<div class="box box12 image-box"></div>
+              <button class="sortknap bottom-button">Neighbour</button>
+            </div>
 
-  </div>
-
-    </main>
-	
-</MainLayout>
-
-    
-</body>
+            <div class="box box12 image-box"></div>
+          </div>
+        </div>
+      </main>
+    </MainLayout>
+  </body>
 </html>

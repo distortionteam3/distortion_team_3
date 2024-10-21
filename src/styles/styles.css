@@ -43,7 +43,7 @@ h1 {
   font-style: normal;
   color: #46ec5a;
   font-size: 10rem;
-   display: inline-block;
+  display: inline-block;
 }
 
 .h1lineupoverskift {
@@ -81,11 +81,11 @@ body {
 }
 
 .inline-image {
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .inline-image img {
-  width: 30px; 
+  width: 30px;
   height: auto;
 }
 
@@ -113,8 +113,6 @@ body {
   font-weight: 900;
   font-style: normal;
 }
-
-
 
 .box1,
 .box2,

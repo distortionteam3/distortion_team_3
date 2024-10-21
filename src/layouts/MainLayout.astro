@@ -3,74 +3,61 @@
 ---
 
 <h1>
-  DISTOR<span class="inline-image">T</span><img src="/public/chesterthejester.svg" alt="chesterthejester" class="inline-image">O<span>N</span>
+  DISTOR<span class="inline-image">T</span><img src="/imgs/chesterthejester.svg" alt="chesterthejester" class="inline-image" />O<span>N</span>
 </h1>
 
 <main>
-
-<slot />
-
+  <slot />
 </main>
 
-
-
 <footer>
+  <div class="streg"></div>
 
+  <div>
+    <img class="imgfooter" src="/imgs/instagram.png" alt="Instagram logo" />
+    <img class="imgfooter" src="/imgs/facebook.png" alt="Facebook logo" />
+    <img class="imgfooter" src="/billet.png" alt="Billet ikon" />
+  </div>
 
-    <div class="streg"></div>
-
-    <div >
-    <img class="imgfooter" src="/public/instagram.png" alt="Instagram logo">
-    <img class="imgfooter" src="/public/facebook.png" alt="Facebook logo">
-    <img class="imgfooter" src="/billet.png" alt="Billet ikon">
-    </div>
-
-<p>
-  We are an independent festival and our not-for-profit foundation <br> 
-  Fonden Distortion København supports arts and <br> 
-  culture and social projects in the public space.
-  <br> 
-  <strong>Refshalevej 167A</strong>
-  <br>
-  <strong>1432 Copenhagen K</strong>
-  <br>
-  <strong>CVR no. 31183200</strong>
-</p>
-
-
+  <p>
+    We are an independent festival and our not-for-profit foundation <br />
+    Fonden Distortion København supports arts and <br />
+    culture and social projects in the public space.
+    <br />
+    <strong>Refshalevej 167A</strong>
+    <br />
+    <strong>1432 Copenhagen K</strong>
+    <br />
+    <strong>CVR no. 31183200</strong>
+  </p>
 </footer>
 
-
 <style>
+  /*** MOBIL ***/
 
-/*** MOBIL ***/
-
-@media (max-width: 600px) {
-
-     h1 {
-        font-size: 2rem; /* Mindre skrifttypestørrelse for mobil */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem; /* Mindre skrifttypestørrelse for mobil */
     }
 
     img {
-        width: 15%; /* Gør SVG-billedet mindre */
-       
+      width: 15%; /* Gør SVG-billedet mindre */
     }
-    
-}
+  }
 
-.streg {
-  width: 40%;
-  height: 3px;
-  background-color: #ccc;
-  margin: 20px auto;
-}
+  .streg {
+    width: 40%;
+    height: 3px;
+    background-color: #ccc;
+    margin: 20px auto;
+  }
 
-.imgfooter {
+  .imgfooter {
     margin-left: 40px;
-}
+  }
 
-p {
-font-family: "Goldman", sans-serif;
-line-height: 2;
-}
+  p {
+    font-family: "Goldman", sans-serif;
+    line-height: 2;
+  }
 </style>
