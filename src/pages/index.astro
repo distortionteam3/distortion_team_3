@@ -1,6 +1,7 @@
 ---
 import BurgerMenu from "../components/BurgerMenu.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 import "../styles/style.css";
 ---
 
@@ -24,7 +25,8 @@ import "../styles/style.css";
         <div class="grid-container">
           <div class="box box1">
             <h2 class="grøntekst">BLIND BIRD TICKETS ON SALE NOW</h2>
-            <button class="forsideknapgrøn">Get your tickets here</button>
+            <br />
+            <Button variant="green" size="medium">Get your tickets here</Button>
           </div>
 
           <div class="box box2 image-box"></div>
@@ -39,7 +41,9 @@ import "../styles/style.css";
 
           <div class="box box5">
             <h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
-            <a class="forsideknaporange" href="/lineup">Lineup</a>
+            <Button variant="orange" size="medium"><a href="/lineup">Lineup</a></Button>
+
+            <!--             <a class="forsideknaporange" href="/lineup">Lineup</a> -->
           </div>
 
           <div class="box box6 image-box"></div>
@@ -57,20 +61,19 @@ import "../styles/style.css";
           <div class="box box8 image-box"></div>
 
           <div class="box box9 image-box">
-            <button class="forsideknapgrøn bottom-button">Merchandise</button>
+            <Button variant="green" size="medium" placement="bottom">Merchandise</Button>
           </div>
 
           <div class="box box10">
             <h2>Discover our many events all over Copenhagen</h2>
 
-            <button class="forsideknapgrøn bottom-button">Events</button>
+            <Button variant="green" size="medium" placement="bottom">Events</Button>
           </div>
 
           <div class="box box11">
             <h2 class="sorttekst">Neighbour</h2>
             <h2 class="h2regular">Are you a neighbour to Distortion? Get all the info you need here</h2>
-
-            <button class="sortknap bottom-button">Neighbour</button>
+            <Button variant="black" size="medium" placement="bottom">Neighbour</Button>
           </div>
 
           <div class="box box12 image-box"></div>
