@@ -3,7 +3,7 @@ import BurgerMenu from "../../components/BurgerMenu.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
 import Cardsingle from "../../components/Cardsingle.astro";
-import "../styles/singleview.css";
+import "../../styles/singleview.css";
 const url = "https://hvqqqwpdmwotjgxebrxv.supabase.co/rest/v1/distortion";
 const data = await fetch(url, {
   headers: {
@@ -27,7 +27,6 @@ console.log(data);
   </head>
 
   <body>
-
     <ul>
       {data.map((item) => <Cardsingle data={item} />)}
     </ul>
