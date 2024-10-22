@@ -1,0 +1,181 @@
+/* Knap */
+:root {
+  --font-size-base: 20px;
+  --font-size-small: 14px;
+  --space-xxxl: 48px;
+  --space-xl: 40px;
+  --space-xs: 8px;
+  --space-xxxs: 4px;
+  --space-md: 12px;
+}
+
+/*FONTE*/
+.goldman-regular {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-bold {
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.play-regular {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.play-bold {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/*TEKST*/
+
+h1 {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #46ec5a;
+  font-size: 10rem;
+  display: inline-block;
+}
+
+h2 {
+  font-family: "Goldman", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #f5f5f5;
+}
+
+p {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #f5f5f5;
+}
+
+.h2regular {
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #323232;
+  text-align: center;
+}
+
+.title-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-right: 30px;
+}
+
+/* Flex container for alt indhold */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5%;
+}
+
+/* Main sektion indeholder billede, tekst, Spotify og knapper */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Billede sektion */
+.image-section {
+  display: flex;
+  justify-content: center;
+  /* Centerer billedet */
+}
+
+.image-section img {
+  max-width: 100%;
+  /* Billedet fylder hele bredden af sin container */
+  height: auto;
+  filter: grayscale(100%);
+  border-radius: 10px;
+}
+
+/* Sektion for tekst og Spotify */
+.text-and-spotify {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Tekstsektion */
+.text-section {
+  text-align: left;
+}
+
+.text-section p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Spotify embed styling */
+.spotify-embed iframe {
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+/* Button styling */
+.buttons {
+  display: flex;
+  justify-content: right;
+  gap: 15px;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+}
+
+.get-ticket {
+  background-color: #00ff00;
+  color: #000;
+}
+
+.lineup {
+  background-color: #666;
+  color: #fff;
+}
+
+.lineup:hover,
+.get-ticket:hover {
+  opacity: 0.8;
+}

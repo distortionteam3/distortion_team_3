@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+---
+
+<li>
+  <a href={"/lineup/" + data.slug}>
+    <img src={"/imgs/" + data.img} />
+    <h2>{data.name}</h2>
+    <p>{data.bio}</p>
+<iframe src="" frameborder="0">{data.spotify_id}</iframe>
+
+  </a>
+</li>
+
+<style>
+  h2 {
+    background: red;
+  }
+</style>

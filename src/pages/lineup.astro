@@ -1,20 +1,22 @@
 ---
 import BurgerMenu from "../components/BurgerMenu.astro";
+import Card from "../components/Card.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/styles.css";
+import "../styles/lineup.css";
+const url = "https://hvqqqwpdmwotjgxebrxv.supabase.co/rest/v1/distortion?order=id.asc";
+
+const data = await fetch(url, {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2cXFxd3BkbXdvdGpneGVicnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU2MDY4NzQsImV4cCI6MjA0MTE4Mjg3NH0.K9dKO1K4NQBdSCsqBZHh1Yc4L8VNHDBNgRCzsI0fSSQ",
+  },
+}).then((res) => res.json());
+console.log(data);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Line up</title>
-    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -26,6 +28,9 @@ import "../styles/styles.css";
           <h1 class="h1lineupoverskift">NØRREBRO</h1>
           <h2 class="h2lineupoverskift">THURSDAY 30TH OF MAY<br /> 2025</h2>
         </div>
+        <ul class="grid_container">
+          {data.map((item) => <Card data={item} />)}
+        </ul>
 
         <div class="grid-container">
           <div class="box box1 image-box">
@@ -66,8 +71,8 @@ import "../styles/styles.css";
             <h2 class="text">AV AV AV</h2>
           </div>
           <div class="box box11 image-box">
-            <img src="/imgs/gobs.png" alt="gobs" />
-            <h2 class="text">GOBS</h2>
+            <img src="/imgs/danamontana1.png" alt="gobs" />
+            <h2 class="text">DANA MONTANA</h2>
           </div>
           <div class="box box12">
             <button class="billeter"><img src="/imgs/tickets-alt-svgrepo-com.svg" alt="billede af biletter" /></button>
@@ -77,3 +82,23 @@ import "../styles/styles.css";
     </MainLayout>
   </body>
 </html>
+
+<style>
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 40px;
+    margin: 0;
+    width: 100vw;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    .grid_container {
+      grid-template-columns: 1fr; /* Én kolonne */
+      max-width: 100%; /* Juster max-width */
+      margin: 0 auto; /* Centerer containeren */
+    }
+  }
+</style>

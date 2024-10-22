@@ -2,20 +2,13 @@
 import BurgerMenu from "../components/BurgerMenu.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import "../styles/style.css";
+import "../styles/index.css";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <title>Forside</title>
-    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -40,10 +33,10 @@ import "../styles/style.css";
           <div class="box box3 image-box"></div>
 
           <div class="box box5">
-            <h2 class="sorttekst">Can’t wait? Go take a look at our 2025 lineup</h2>
+            <h2 class="sorttekst">Can't wait? Go take a look at our 2025 lineup</h2>
             <Button variant="orange" size="medium"><a href="/lineup">Lineup</a></Button>
 
-            <!--             <a class="forsideknaporange" href="/lineup">Lineup</a> -->
+
           </div>
 
           <div class="box box6 image-box"></div>
@@ -52,8 +45,15 @@ import "../styles/style.css";
             <h2 class="sorttekst">
               The official <h2>festival app</h2><h2 class="sorttekst">Get set times, maps and more</h2>
               <div>
-                <button class="gråknap"><img src="/imgs/AppSymbol.png" alt="" /></button>
-                <button class="gråknap"><img src="/imgs/Playstore.png" alt="" /></button>
+
+                <Button variant="darkgrey" size="small" placement="bottom">
+                  <img src="/imgs/AppSymbol.png" alt="App image" />
+                </Button>
+
+                <Button variant="darkgrey" size="small" placement="bottom">
+                  <img src="/imgs/Playstore.png" alt="Playstore image" />
+                </Button>
+
               </div>
             </h2>
           </div>

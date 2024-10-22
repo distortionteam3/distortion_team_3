@@ -10,6 +10,8 @@
   --space-md: 12px;
 }
 
+
+
 /* Basic funktioner */
 * {
   box-sizing: border-box;
@@ -225,4 +227,6 @@ body {
   .box {
     height: 400px;
   }
-}
+} 
+
+

@@ -13,13 +13,22 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     color: #030303;
     border-radius: 25px;
     padding: 10px 20px;
-    
   }
 
   [data-variant="green"]:hover {
     color: white;
   }
 
+  [data-variant="grey"] {
+    background: #666666;
+    color: #46ec5a;
+    border-radius: 25px;
+    padding: 10px 20px;
+  }
+
+  [data-variant="grey"]:hover {
+    color: white;
+  }
   [data-variant="orange"] {
     background: #e08516;
     color: white;
@@ -36,11 +45,23 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     color: white;
     border-radius: 25px;
     padding: 10px 20px;
-    
   }
 
   [data-variant="black"]:hover {
     color: #46ec5a;
+  }
+
+  [data-variant="darkgrey"] {
+    background: #323232;
+    border-radius: 25px;
+    padding: 10px 20px;
+    z-index: 10;
+    display: flex; 
+    align-items: center; 
+  }
+
+  [data-variant="darkgrey"]:hover {
+    background: #444444;
   }
 
   /* Sizes */
@@ -49,13 +70,14 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     min-height: var(--space-xxxl);
     padding-block: var(--space-xs);
     padding-inline: var(--space-xl);
-    width: 250px; 
+    width: 250px;
   }
   [data-size="small"] {
     font-size: var(--font-size-small);
     min-height: var(--space-xl);
     padding-block: var(--space-xxxs);
     padding-inline: var(--space-md);
+    width: 100px;
   }
 
   /* Placement */
@@ -64,5 +86,24 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  [data-placement="right"] {
+    position: relative;
+    bottom: 10px;
+    right: 30px;
+  }
+
+  /* Style for anchor tags */
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Billede i knap */
+  button img {
+    margin-right: 10px;
+    height: 20px;
   }
 </style>

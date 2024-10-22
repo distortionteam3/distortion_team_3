@@ -1,0 +1,67 @@
+---
+const { data } = Astro.props;
+---
+
+<li>
+  <a href={"/lineup/" + data.slug} class="image-container">
+    <img src={"/imgs/" + data.img} alt={data.name} />
+    <h2>{data.name}</h2>
+  </a>
+</li>
+
+<style>
+  li {
+    list-style: none;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+    width: 550px;
+    height: 700px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-container h2 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 5rem; /* Behold denne */
+    text-align: center;
+    width: 100%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    bottom: 4%;
+    margin: 0;
+  }
+
+  .image-container:hover h2 {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.05);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  @media (max-width: 600px) {
+
+    .image-container {
+      width: 100%; 
+      height: auto; 
+      margin: 0 auto; 
+    }
+
+    .image-container h2 {
+      font-size: 2rem; 
+    }
+  }
+</style>

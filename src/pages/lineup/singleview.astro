@@ -1,0 +1,64 @@
+---
+import BurgerMenu from "../../components/BurgerMenu.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import Cardsingle from "../../components/Cardsingle.astro";
+import "../styles/singleview.css";
+const url = "https://hvqqqwpdmwotjgxebrxv.supabase.co/rest/v1/distortion";
+const data = await fetch(url, {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2cXFxd3BkbXdvdGpneGVicnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU2MDY4NzQsImV4cCI6MjA0MTE4Mjg3NH0.K9dKO1K4NQBdSCsqBZHh1Yc4L8VNHDBNgRCzsI0fSSQ",
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <ul>
+      {data.map((item) => <Cardsingle data={item} />)}
+    </ul>
+
+    <div class="title-vertical">
+      <span>Dana</span>
+      <span>Montana</span>
+
+      <div class="image-section">
+        <img src="/imgs/danamontana1.png" alt="" />
+      </div>
+    </div>
+    <div class="main-section">
+      <div class="text-and-spotify">
+        <div class="text-section">
+          <p>Born in Ukraine, this rising DJ and producer Dana Montana is introducing long awaited versatility into the club scene. Inspired by the groove and party spirit of the 90s and early 00s, Dana Montana will take you on a musical journey of house, hard house, trance and beyond.</p>
+          <p>
+            As a proud resident of the Drag Me To Hell nights, Dana charmed her jock into the soundtrack of your dancefloor makeouts. Dana Montana will play at Distortion on <strong>Friday 21 May 2024</strong>.
+          </p>
+        </div>
+
+        <div class="spotify-embed">
+          <iframe src="https://open.spotify.com/embed/track/2HftFY2qJZZk9jVjHuZnVn" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div>
+        <Button variant="green" size="medium" placement="right">Get your tickets here</Button>
+        <br />
+        <br />
+        <Button variant="grey" size="medium" placement="right">Lineup</Button>
+      </div>
+    </div>
+  </body>
+</html>
