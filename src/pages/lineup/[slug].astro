@@ -15,22 +15,22 @@ export async function getStaticPaths() {
   }).then((res) => res.json());
 
   return data.map((item) => ({
-    params: { slug: item.slug }, // [artist]=artist.slug
-    props: { item }, // send al data med som props
+    params: { slug: item.slug },
+    props: { item },
   }));
 }
 const { item } = Astro.props;
-console.log(item); // artist.name, artist.image osv.
+console.log(item);
 ---
 
 <BurgerMenu />
 <MainLayout>
-  <div class="grid-1-1">
+ <div> 
     <h1>{item.name}</h1>
-
+</div>
     <div class="image-container">
       <img src={"/imgs/" + item.img} alt={item.name} />
-    </div>
+    
   </div>
 
   <div class="bio-and-iframe">
@@ -38,10 +38,10 @@ console.log(item); // artist.name, artist.image osv.
     <iframe src={"https://open.spotify.com/embed/track/" + item.spotify_id} frameborder="0"></iframe>
   </div>
 
-  <div class="button-container">
+  
     <Button variant="green" size="medium">Get your ticket here</Button>
     <Button variant="darkgrey" size="medium">2025 lineup</Button>
-  </div>
+  
 </MainLayout>
 
 <style>
@@ -51,10 +51,7 @@ console.log(item); // artist.name, artist.image osv.
     font-size: 50px;
     font-weight: 900;
     font-style: normal;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    margin-right: 30px;
-    justify-self: start;
+   
   }
 
   .grid-1-1 {
@@ -63,13 +60,17 @@ console.log(item); // artist.name, artist.image osv.
     grid-template-rows: auto;
     padding: 20px;
   }
-
+  img {
+    position: relative;
+    width: 90%;
+    height: 500px;
+    object-fit: cover;
+  }
   .image-container {
     display: flex;
     justify-content: center;
   }
 
- 
   .bio-and-iframe {
     display: flex;
     align-items: flex-start;
