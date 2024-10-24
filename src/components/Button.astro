@@ -7,6 +7,14 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
 </button>
 
 <style>
+button {
+      font-family: "Goldman", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      
+    }
+
+
   /* Variants */
   [data-variant="green"] {
     background: #46ec5a;
@@ -56,6 +64,7 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     color: white;
     border-radius: 25px;
     padding: 10px 20px;
+    margin-bottom: 30px;
   }
 
   [data-variant="darkgrey"]:hover {
@@ -69,7 +78,7 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     min-height: var(--space-xxxl);
     padding-block: var(--space-xs);
     padding-inline: var(--space-xl);
-    width: 260px;
+    width: 290px;
   }
   [data-size="small"] {
     font-size: var(--font-size-small);
