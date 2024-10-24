@@ -98,13 +98,13 @@ body {
 }
 
 .box2 {
-  background-image: url(/imgs/1.png);
+  background-image: url(/imgs/1.webp);
   background-size: cover;
   background-position: center;
 }
 
 .box3 {
-  background-image: url(/imgs/2.png);
+  background-image: url(/imgs/2.webp);
   background-size: cover;
   background-position: center;
 }
@@ -119,7 +119,7 @@ body {
 }
 
 .box6 {
-  background-image: url(/imgs/3.png);
+  background-image: url(/imgs/3.webp);
   background-size: cover;
   background-position: center;
 }
@@ -129,13 +129,13 @@ body {
 }
 
 .box8 {
-  background-image: url(/imgs/4.png);
+  background-image: url(/imgs/4.webp);
   background-size: cover;
   background-position: center;
 }
 
 .box9 {
-  background-image: url(/imgs/6.png);
+  background-image: url(/imgs/6.webp);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -152,7 +152,7 @@ body {
 }
 
 .box12 {
-  background-image: url(/imgs/5.png);
+  background-image: url(/imgs/5.webp);
   background-size: cover;
   background-position: center;
 }

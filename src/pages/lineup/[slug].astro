@@ -25,12 +25,11 @@ console.log(item);
 
 <BurgerMenu />
 <MainLayout>
- <div> 
+  <div>
     <h1>{item.name}</h1>
-</div>
-    <div class="image-container">
-      <img src={"/imgs/" + item.img} alt={item.name} />
-    
+  </div>
+  <div class="image-container">
+    <img src={"/imgs/" + item.img} alt={item.name} />
   </div>
 
   <div class="bio-and-iframe">
@@ -38,10 +37,8 @@ console.log(item);
     <iframe src={"https://open.spotify.com/embed/track/" + item.spotify_id} frameborder="0"></iframe>
   </div>
 
-  
-    <Button variant="green" size="medium">Get your ticket here</Button>
-    <Button variant="darkgrey" size="medium">2025 lineup</Button>
-  
+  <Button variant="green" size="medium">Get your ticket here</Button>
+  <Button variant="darkgrey" size="medium">2025 lineup</Button>
 </MainLayout>
 
 <style>
@@ -51,7 +48,6 @@ console.log(item);
     font-size: 50px;
     font-weight: 900;
     font-style: normal;
-   
   }
 
   .grid-1-1 {
@@ -100,5 +96,20 @@ console.log(item);
     align-items: end;
     gap: 40px;
     margin: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .grid-1-1 {
+      display: grid;
+      padding: 20px;
+    }
+
+    .bio-and-iframe {
+      font-size: 12px; /* Ændre til en passende størrelse for mobil */
+    }
+
+    p {
+      font-size: 14px; /* Ændre størrelsen specifikt for p-elementet */
+    }
   }
 </style>
