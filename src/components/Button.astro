@@ -53,13 +53,14 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
 
   [data-variant="darkgrey"] {
     background: #323232;
+    color: white;
     border-radius: 25px;
     padding: 10px 20px;
-    z-index: 10;
   }
 
   [data-variant="darkgrey"]:hover {
     background: #444444;
+    color: #46ec5a;
   }
 
   /* Sizes */
@@ -68,7 +69,7 @@ const { variant = "green", size = "medium", placement = null } = Astro.props;
     min-height: var(--space-xxxl);
     padding-block: var(--space-xs);
     padding-inline: var(--space-xl);
-    width: 250px;
+    width: 260px;
   }
   [data-size="small"] {
     font-size: var(--font-size-small);

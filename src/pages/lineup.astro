@@ -10,87 +10,28 @@ const data = await fetch(url, {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2cXFxd3BkbXdvdGpneGVicnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU2MDY4NzQsImV4cCI6MjA0MTE4Mjg3NH0.K9dKO1K4NQBdSCsqBZHh1Yc4L8VNHDBNgRCzsI0fSSQ",
   },
 }).then((res) => res.json());
-console.log(data);
 ---
+<BurgerMenu />
+<MainLayout>
+  
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Line up</title>
-  </head>
+  <div>
+    <h2 class="h2lineupoverskift">DISTORTION X</h2>
+    <h1 class="h1lineupoverskift">NØRREBRO</h1>
+    <h2 class="h2lineupoverskift">THURSDAY 30TH OF MAY<br /> 2025</h2>
+  </div>
 
-  <body>
-    <BurgerMenu />
-    <MainLayout>
-      <main>
-        <div>
-          <h2 class="h2lineupoverskift">DISTORTION X</h2>
-          <h1 class="h1lineupoverskift">NØRREBRO</h1>
-          <h2 class="h2lineupoverskift">THURSDAY 30TH OF MAY<br /> 2025</h2>
-        </div>
-        <ul class="grid_container">
-          {data.map((item) => <Card data={item} />)}
-        </ul>
-
-        <div class="grid-container">
-          <div class="box box1 image-box">
-            <img src="/imgs/artig.png" alt="artig" />
-            <h2 class="text">ARTIG ARTIG</h2>
-          </div>
-          <div class="box box2 image-box">
-            <img src="/imgs/noahcarter.png" alt="noahcarter" />
-            <h2 class="text">NOAH CARTER</h2>
-          </div>
-          <div class="box3">
-            <button class="billeter"><img class="fix" src="/imgs/tickets-alt-svgrepo-com.svg" alt="billede af biletter" /></button>
-          </div>
-          <div class="box4">
-            <button class="billeter"><img class="fix" src="/imgs/tickets-alt-svgrepo-com.svg" alt="billede af biletter" /></button>
-          </div>
-          <div class="box box5 image-box">
-            <img src="/imgs/kindmodkind.png" alt="kindmodkind" />
-            <h2 class="text">KIND MOD KIND</h2>
-          </div>
-          <div class="box box6 image-box">
-            <img src="/imgs/goldie.png" alt="goldie" />
-            <h2 class="text">GOLDIE</h2>
-          </div>
-          <div class="box box7 image-box">
-            <img src="/imgs/yakuza.png" alt="yakuza" />
-            <h2 class="text">YAKUZA</h2>
-          </div>
-          <div class="box box8">
-            <button class="billeter"><img src="/imgs/tickets-alt-svgrepo-com.svg" alt="billede af biletter" /></button>
-          </div>
-          <div class="box box9 image-box">
-            <img src="/imgs/icekid.png" alt="icekid" />
-            <h2 class="text">ICE KID</h2>
-          </div>
-          <div class="box box10 image-box">
-            <img src="/imgs/avavav.png" alt="avavav" />
-            <h2 class="text">AV AV AV</h2>
-          </div>
-          <div class="box box11 image-box">
-            <img src="/imgs/danamontana1.png" alt="gobs" />
-            <h2 class="text">DANA MONTANA</h2>
-          </div>
-          <div class="box box12">
-            <button class="billeter"><img src="/imgs/tickets-alt-svgrepo-com.svg" alt="billede af biletter" /></button>
-          </div>
-        </div>
-      </main>
-    </MainLayout>
-  </body>
-</html>
+  <ul class="grid_container">
+    {data.map((item) => <Card data={item} />)}
+  </ul>
+</MainLayout>
 
 <style>
   .grid_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
     padding: 40px;
     margin: 0;
-    width: 100vw;
     height: auto;
   }
 

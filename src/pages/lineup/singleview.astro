@@ -2,15 +2,14 @@
 import BurgerMenu from "../../components/BurgerMenu.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
-import Cardsingle from "../../components/Cardsingle.astro";
 import "../../styles/singleview.css";
 const url = "https://hvqqqwpdmwotjgxebrxv.supabase.co/rest/v1/distortion";
-const data = await fetch(url, {
+const artist = await fetch(url, {
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2cXFxd3BkbXdvdGpneGVicnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU2MDY4NzQsImV4cCI6MjA0MTE4Mjg3NH0.K9dKO1K4NQBdSCsqBZHh1Yc4L8VNHDBNgRCzsI0fSSQ",
   },
 }).then((res) => res.json());
-console.log(data);
+console.log(artist);
 ---
 
 <!doctype html>
@@ -27,11 +26,9 @@ console.log(data);
   </head>
 
   <body>
-    <ul>
-      {data.map((item) => <Cardsingle data={item} />)}
-    </ul>
+    
 
-    <div class="title-vertical">
+    <!-- <div class="title-vertical">
       <span>Dana</span>
       <span>Montana</span>
 
@@ -52,7 +49,7 @@ console.log(data);
           <iframe src="https://open.spotify.com/embed/track/2HftFY2qJZZk9jVjHuZnVn" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
-      <div>
+      <div> -->
         <Button variant="green" size="medium" placement="right">Get your tickets here</Button>
         <br />
         <br />

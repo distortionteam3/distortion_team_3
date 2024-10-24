@@ -1,0 +1,103 @@
+---
+// @ts-nocheck
+import MainLayout from "../../layouts/MainLayout.astro";
+import "../../styles/singleview.css";
+import BurgerMenu from "../../components/BurgerMenu.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+  const url = "https://hvqqqwpdmwotjgxebrxv.supabase.co/rest/v1/distortion?order=id.asc";
+
+  const data = await fetch(url, {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2cXFxd3BkbXdvdGpneGVicnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU2MDY4NzQsImV4cCI6MjA0MTE4Mjg3NH0.K9dKO1K4NQBdSCsqBZHh1Yc4L8VNHDBNgRCzsI0fSSQ",
+    },
+  }).then((res) => res.json());
+
+  return data.map((item) => ({
+    params: { slug: item.slug }, // [artist]=artist.slug
+    props: { item }, // send al data med som props
+  }));
+}
+const { item } = Astro.props;
+console.log(item); // artist.name, artist.image osv.
+---
+
+<BurgerMenu />
+<MainLayout>
+  <div class="grid-1-1">
+    <h1>{item.name}</h1>
+
+    <div class="image-container">
+      <img src={"/imgs/" + item.img} alt={item.name} />
+    </div>
+  </div>
+
+  <div class="bio-and-iframe">
+    <p>{item.bio}</p>
+    <iframe src={"https://open.spotify.com/embed/track/" + item.spotify_id} frameborder="0"></iframe>
+  </div>
+
+  <div class="button-container">
+    <Button variant="green" size="medium">Get your ticket here</Button>
+    <Button variant="darkgrey" size="medium">2025 lineup</Button>
+  </div>
+</MainLayout>
+
+<style>
+  h1 {
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    font-style: normal;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-right: 30px;
+    justify-self: start;
+  }
+
+  .grid-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 20px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+ 
+  .bio-and-iframe {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  p {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 700px;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  iframe {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 40px;
+    margin: 40px;
+  }
+</style>
